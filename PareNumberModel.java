@@ -1,8 +1,9 @@
 //model
 import java.util.*;
 
-public class test
-    public test(){
+public class PareNumberModel{
+
+    public void PareNumberModel(){
         
 }
     
