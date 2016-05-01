@@ -20,6 +20,7 @@ public class PareNumberController{
 
     public void didType(int x, int y){
 	//文字判定とか
+	//clickの処理
     }
 
 }
