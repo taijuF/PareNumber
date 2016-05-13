@@ -5,6 +5,7 @@ public class PareNumberModel{
     
     int MaxNumber = 0; //難易度管理
     int PanelNumber[][];//パネルの数字管理
+    int a,b,c,d;
     
     public PareNumberModel(){
         
@@ -38,18 +39,108 @@ public class PareNumberModel{
         }//配列を返す手段募集中
     }
     
-    public void numberClear(){
-        
-        //入力を受けてその左右のマスのチェックと数字の消去
-        //消すことができたならnumberFallへ
+    public void numberClear(int a1,int b1,int c1,int d1){ //a,c = X  b,d = Y
+        a = a1;
+        b = b1;
+        c = c1;
+        d = d1;
+        if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
+            int CheckNember; //チェックナンバーを用意
+            for(int i = b;i <= MaxNumber;i++){ //aの上のチェック
+                CheckNember = PanelNumber[a][i];
+                
+                for(int j=i+1;j < MaxNumber + 1;j++){ //チェックする位置の移動
+                    if(CheckNember != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
+                        break;
+                    }
+                    PanelNumber[a][j-1] = 0;
+                }
+            }
+            
+            for(int i = b;i <= MaxNumber;i++){ //cの上のチェック
+                CheckNember = PanelNumber[c][i];
+                
+                for(int j=i+1;j < MaxNumber + 1;j++){
+                    if(CheckNember != PanelNumber[c][j]){
+                        break;
+                    }
+                    PanelNumber[c][j-1] = 0;
+                }
+            }
+            PanelNumber[a][b] = 0;
+            PanelNumber[c][d] = 0;
+        }
+        //配列を返す手段
     }
     
-    private void numberFall(){
+    public void numberFall(){
+        for(int i = b;i <= MaxNumber;i++){ //aの上のチェック
+	    int j = 0;
+            int checkupNumber = 0;
+            if(PanelNumber[a][i] == 0){
+                for(j = i+1;j < MaxNumber + 1;j++){ //チェックする位置の移動
+                    
+                    if(PanelNumber[a][j] != 0){ //違う数字が出たらループから抜ける
+			checkupNumber = 1;
+                        break;
+                    }
+                    
+                }
+                if(checkupNumber == 1){
+                    PanelNumber[a][i] = PanelNumber[a][j];
+                    PanelNumber[a][j] = 0;
+                }else{
+                    for(;i <= MaxNumber;i++){
+                        Random rnd = new Random();
+                        int n = rnd.nextInt(MaxNumber+1);
+                        PanelNumber[a][i] = n;
+
+                    }
+                    break;
+                }
+            }
+        }
+        
+        for(int i = b;i <= MaxNumber;i++){ //aの上のチェック
+            int checkupNumber = 0;
+	    int j;
+            if(PanelNumber[c][i] == 0){
+                for(j = i+1;j < MaxNumber + 1;j++){ //チェックする位置の移動
+                    
+                    if(PanelNumber[c][j] != 0){ //違う数字が出たらループから抜ける
+			checkupNumber = 1;
+                        break; //うちループから抜ける
+                       
+                    }
+                    
+                }
+                if(checkupNumber == 1){
+                    PanelNumber[c][i] = PanelNumber[c][j];
+                    PanelNumber[c][j] = 0;
+                }else{
+                    for(;i <= MaxNumber;i++){
+                        Random rnd = new Random();
+                        int n = rnd.nextInt(MaxNumber+1);
+                        PanelNumber[c][i] = n;
+                        
+                    }
+                    break; //外側ループから抜ける
+                }
+            }
+        }
+
+
         //空いてる部分にランダムに数字を入れる
         //空いている場所の判定
         //空いている場所を確認してその上の部分から数字を取る
         //その後
-        
     }
     
 }
+
+
+
+
+
+
+
