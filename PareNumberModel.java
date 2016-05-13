@@ -3,7 +3,7 @@ import java.util.*;
 
 public class PareNumberModel{
     
-    int MaxNumber = 0; //難易度管理
+    int MaxNumber = 0; //大きさ管理
     int PanelNumber[][];//パネルの数字管理
     int a,b,c,d;
     
@@ -17,21 +17,21 @@ public class PareNumberModel{
         return 4;
     }
     
-    public int nomal(){
+    public int nomal(){//マスの数を送り返す
         MaxNumber = 6;
         PanelNumber = new int[MaxNumber][MaxNumber];
         return 6;
     }
     
-    public int hard(){
+    public int hard(){//マスの数を送り返す
         MaxNumber = 8;
         PanelNumber = new int[MaxNumber][MaxNumber];
         return 8;
     }
     
     public void getNumber(){//数字を入れた配列を返す(初期設定)
-        for(int i=0;i < MaxNumber;i++){
-            for(int j=0;j < MaxNumber;j++){
+        for(int i = MaxNumber;i > 0;i--){
+            for(int j = MaxNumber;j > 0;j--){
                 Random rnd = new Random();
                 int n = rnd.nextInt(MaxNumber+1);
                 PanelNumber[i][j] = n;
@@ -39,17 +39,17 @@ public class PareNumberModel{
         }//配列を返す手段募集中
     }
     
-    public void numberClear(int a1,int b1,int c1,int d1){ //a,c = X  b,d = Y
+    public void numberClear(int a1,int b1,int c1,int d1){ //a,c = X  b,d = Y　0のある配列
         a = a1;
         b = b1;
         c = c1;
         d = d1;
         if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
             int CheckNember; //チェックナンバーを用意
-            for(int i = b;i <= MaxNumber;i++){ //aの上のチェック
+            for(int i = b;i >= 0;i--){ //aの上のチェック
                 CheckNember = PanelNumber[a][i];
                 
-                for(int j=i+1;j < MaxNumber + 1;j++){ //チェックする位置の移動
+                for(int j=i-1;j > 0;j--){ //チェックする位置の移動
                     if(CheckNember != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
                         break;
                     }
@@ -57,10 +57,10 @@ public class PareNumberModel{
                 }
             }
             
-            for(int i = b;i <= MaxNumber;i++){ //cの上のチェック
+            for(int i = b;i >= 0;i--){ //cの上のチェック
                 CheckNember = PanelNumber[c][i];
                 
-                for(int j=i+1;j < MaxNumber + 1;j++){
+                for(int j=i-1;j > 0;j--){
                     if(CheckNember != PanelNumber[c][j]){
                         break;
                     }
@@ -73,15 +73,17 @@ public class PareNumberModel{
         //配列を返す手段
     }
     
-    public void numberFall(){
-        for(int i = b;i <= MaxNumber;i++){ //aの上のチェック
-	    int j = 0;
+    
+    
+    public void numberFall(){ //０のない配列
+        for(int i = b;i >= 0;i--){ //aの上のチェック
+            int j = 0;
             int checkupNumber = 0;
             if(PanelNumber[a][i] == 0){
-                for(j = i+1;j < MaxNumber + 1;j++){ //チェックする位置の移動
+                for(j = i-1;j > 0;j--){ //チェックする位置の移動
                     
                     if(PanelNumber[a][j] != 0){ //違う数字が出たらループから抜ける
-			checkupNumber = 1;
+                        checkupNumber = 1;
                         break;
                     }
                     
@@ -90,27 +92,27 @@ public class PareNumberModel{
                     PanelNumber[a][i] = PanelNumber[a][j];
                     PanelNumber[a][j] = 0;
                 }else{
-                    for(;i <= MaxNumber;i++){
+                    for(;i >= 0;i--){
                         Random rnd = new Random();
                         int n = rnd.nextInt(MaxNumber+1);
                         PanelNumber[a][i] = n;
-
+                        
                     }
                     break;
                 }
             }
         }
         
-        for(int i = b;i <= MaxNumber;i++){ //aの上のチェック
+        for(int i = b;i >= 0;i--){ //aの上のチェック
             int checkupNumber = 0;
-	    int j;
+            int j;
             if(PanelNumber[c][i] == 0){
-                for(j = i+1;j < MaxNumber + 1;j++){ //チェックする位置の移動
+                for(j = i-1;j > 0;j--){ //チェックする位置の移動
                     
                     if(PanelNumber[c][j] != 0){ //違う数字が出たらループから抜ける
-			checkupNumber = 1;
+                        checkupNumber = 1;
                         break; //うちループから抜ける
-                       
+                        
                     }
                     
                 }
@@ -118,7 +120,7 @@ public class PareNumberModel{
                     PanelNumber[c][i] = PanelNumber[c][j];
                     PanelNumber[c][j] = 0;
                 }else{
-                    for(;i <= MaxNumber;i++){
+                    for(;i >= 0;i--){
                         Random rnd = new Random();
                         int n = rnd.nextInt(MaxNumber+1);
                         PanelNumber[c][i] = n;
@@ -128,8 +130,8 @@ public class PareNumberModel{
                 }
             }
         }
-
-
+        //配列を返す手段募集
+        
         //空いてる部分にランダムに数字を入れる
         //空いている場所の判定
         //空いている場所を確認してその上の部分から数字を取る
@@ -137,6 +139,8 @@ public class PareNumberModel{
     }
     
 }
+
+
 
 
 
