@@ -4,24 +4,27 @@ import java.util.*;
 public class PareNumberModel{
     
     int MaxNumber = 0; //難易度管理
-    int PanelNumber[][];//パネルの数時管理
-
+    int PanelNumber[][];//パネルの数字管理
+    
     public PareNumberModel(){
         
     }
     
     public int easy(){ //マスの数を送り返す(仮)
         MaxNumber = 4;
+        PanelNumber = new int[MaxNumber][MaxNumber];
         return 4;
     }
     
     public int nomal(){
         MaxNumber = 6;
+        PanelNumber = new int[MaxNumber][MaxNumber];
         return 6;
     }
     
     public int hard(){
         MaxNumber = 8;
+        PanelNumber = new int[MaxNumber][MaxNumber];
         return 8;
     }
     
@@ -44,7 +47,9 @@ public class PareNumberModel{
     private void numberFall(){
         //空いてる部分にランダムに数字を入れる
         //空いている場所の判定
+        //空いている場所を確認してその上の部分から数字を取る
+        //その後
         
     }
-
+    
 }
