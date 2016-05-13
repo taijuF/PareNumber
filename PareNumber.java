@@ -14,14 +14,16 @@ public class PareNumber extends JFrame{
        JFrame frame = new JFrame("PareNumber");
        frame.setSize(600,600);
        frame.setLayout(null);
-       PareNumberPanel panel = new PareNumberPanel();
-       //JPanel p = new JPanel();
-       //p.setBackground(Color.RED);
-       panel.setSize(300,300);
-       frame.add(panel);
-       //frame.add(p);
+       for(int i=0;i<5;i++){
+	   for(int j=0;j<5;j++){	   
+	       PareNumberPanel p = new PareNumberPanel();
+	       p.setSize(90,90);
+	       p.setLocation(100*i,100*j);
+	       frame.add(p);
+	   }
+       }
        frame.setVisible(true);
-   }
+    }
 
    public void makeMenuBar(){
        JMenuBar bar = new JMenuBar();
