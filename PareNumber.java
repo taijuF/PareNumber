@@ -32,8 +32,21 @@ public class PareNumber extends JFrame{
    public void makeMenuBar(){
        JMenuBar bar = new JMenuBar();
        JMenu menu = new JMenu("ゲーム");
-       JMenuItem newitem = new JMenuItem("ゲームを始める");
-      // newitem.addActionListener(new ActionListener(){
+       bar.add(menu);
+       JMenuItem newitem1 = new JMenuItem("easy");
+       JMenuItem newitem2 = new JMenuItem("normal");
+       JMenuItem newitem3 = new JMenuItem("diffcult");  
+       JMenuItem newitem4 = new JMenuItem("score");  
+       JMenuItem newitem5 = new JMenuItem("close");
+       menu.add(newitem1);
+       menu.add(newitem2);
+       menu.add(newitem3);
+       menu.add(newitem4);
+       menu.add(newitem5);
+       setJMenuBar(bar);
+
+
+       // newitem.addActionListener(new ActionListener(){
          /*  pubilc void actionPerformed(ActionEvent ev){
               controller.newGame();
           }*/
