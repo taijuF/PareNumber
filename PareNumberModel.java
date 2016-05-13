@@ -33,7 +33,7 @@ public class PareNumberModel{
         for(int i = MaxNumber;i > 0;i--){
             for(int j = MaxNumber;j > 0;j--){
                 Random rnd = new Random();
-                int n = rnd.nextInt(MaxNumber+1);
+                int n = rnd.nextInt(MaxNumber)+1;
                 PanelNumber[i][j] = n;
             }
         }//配列を返す手段募集中
