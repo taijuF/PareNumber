@@ -7,7 +7,7 @@ public class PareNumberModel{
     int PanelNumber[][];//パネルの数字管理
     int a,b,c,d;
     
-    public PareNumberModel(){
+    public PareNumberModel(){
         
     }
     
