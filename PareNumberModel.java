@@ -34,7 +34,7 @@ public class PareNumberModel{
     }
     
     public void getNumber(){//数字を入れた配列を返す(初期設定)
-        for(int i = 0;i > MaxNumber;i++){
+        for(int i = 0;i < MaxNumber;i++){
             for(int j = MaxNumber;j > 0;j--){
                 Random rnd = new Random();
                 int n = rnd.nextInt(MaxNumber)+1;
