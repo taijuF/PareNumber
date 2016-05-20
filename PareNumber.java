@@ -10,25 +10,32 @@ public class PareNumber extends JFrame{
     private PareNumberPanel Panel;
     */
 
+
+
     public static void main(String args[]){
+ 
 	PareNumber app = new PareNumber();
-	app.run();
-	app.makeMenuBar();
+	app.startWindow();
+	app.gameWindow();
 }
 
-    public void run(){
-   JFrame frame = new JFrame("PareNumber");
-       frame.setSize(600,600);
-       frame.setLayout(null);
+    public void startWindow(){
+	PareNumberStartFrame Sframe = new PareNumberStartFrame();
+    }
+    
+    public void gameWindow(){
+	PareNumber frame = new PareNumber();
+	this.setSize(600,600);
+	this.setLayout(null);
+	this.setVisible(true);
        for(int i=0;i<5;i++){
 	   for(int j=0;j<5;j++){	   
 	       PareNumberPanel p = new PareNumberPanel();
 	       p.setSize(90,90);
 	       p.setLocation(100*i+50,100*j+70);
-	       frame.add(p);
+	       this.add(p);
 	   }
        }
-       frame.setVisible(true);
     }
        
    public void makeMenuBar(){
