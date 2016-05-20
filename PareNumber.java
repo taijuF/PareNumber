@@ -11,7 +11,13 @@ public class PareNumber extends JFrame{
     */
 
     public static void main(String args[]){
-       JFrame frame = new JFrame("PareNumber");
+	PareNumber app = new PareNumber();
+	app.run();
+	app.makeMenuBar();
+}
+
+    public void run(){
+   JFrame frame = new JFrame("PareNumber");
        frame.setSize(600,600);
        frame.setLayout(null);
        for(int i=0;i<5;i++){
@@ -24,7 +30,7 @@ public class PareNumber extends JFrame{
        }
        frame.setVisible(true);
     }
-
+       
    public void makeMenuBar(){
        JMenuBar bar = new JMenuBar();
        JMenu menu = new JMenu("ゲーム");
@@ -76,5 +82,6 @@ public class PareNumber extends JFrame{
        menu.add(quititem);
        bar.add(menu);
        this.setJMenuBar(bar);
+
    }
 }
