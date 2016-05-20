@@ -11,6 +11,10 @@ public class PareNumberModel{
         
     }
     
+    public void selectDifficulty(){
+    //this.viewの難易度選択画面のメソッド
+    }
+    
     public int easy(){ //マスの数を送り返す(仮)
         MaxNumber = 4;
         PanelNumber = new int[MaxNumber][MaxNumber];
@@ -26,11 +30,11 @@ public class PareNumberModel{
     public int hard(){//マスの数を送り返す
         MaxNumber = 8;
         PanelNumber = new int[MaxNumber][MaxNumber];
-        return 8;
+        return 8;//メソッド呼び出し？
     }
     
     public void getNumber(){//数字を入れた配列を返す(初期設定)
-        for(int i = MaxNumber;i > 0;i--){
+        for(int i = 0;i > MaxNumber;i++){
             for(int j = MaxNumber;j > 0;j--){
                 Random rnd = new Random();
                 int n = rnd.nextInt(MaxNumber)+1;
@@ -45,12 +49,12 @@ public class PareNumberModel{
         c = c1;
         d = d1;
         if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
-            int CheckNember; //チェックナンバーを用意
+            int CheckNumber; //チェックナンバーを用意
             for(int i = b;i >= 0;i--){ //aの上のチェック
-                CheckNember = PanelNumber[a][i];
+                CheckNumber = PanelNumber[a][i];
                 
                 for(int j=i-1;j > 0;j--){ //チェックする位置の移動
-                    if(CheckNember != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
+                    if(CheckNumber != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
                         break;
                     }
                     PanelNumber[a][j-1] = 0;
@@ -58,10 +62,10 @@ public class PareNumberModel{
             }
             
             for(int i = b;i >= 0;i--){ //cの上のチェック
-                CheckNember = PanelNumber[c][i];
+                CheckNumber = PanelNumber[c][i];
                 
                 for(int j=i-1;j > 0;j--){
-                    if(CheckNember != PanelNumber[c][j]){
+                    if(CheckNumber != PanelNumber[c][j]){
                         break;
                     }
                     PanelNumber[c][j-1] = 0;
