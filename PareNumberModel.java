@@ -53,7 +53,7 @@ public class PareNumberModel{
             for(int i = b;i >= 0;i--){ //aの上のチェック
                 CheckNember = PanelNumber[a][i];
                 
-                for(int j=i-1;j > 0;j--){ //チェックする位置の移動
+                for(int j=i-1;j >= 0;j--){ //チェックする位置の移動
                     if(CheckNember != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
                         break;
                     }
@@ -65,7 +65,7 @@ public class PareNumberModel{
             for(int i = b;i >= 0;i--){ //cの上のチェック
                 CheckNember = PanelNumber[c][i];
                 
-                for(int j=i-1;j > 0;j--){
+                for(int j=i-1;j >= 0;j--){
                     if(CheckNember != PanelNumber[c][j]){
                         break;
                     }
@@ -145,8 +145,6 @@ public class PareNumberModel{
     }
     
 }
-
-
 
 
 
