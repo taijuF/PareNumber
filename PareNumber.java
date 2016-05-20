@@ -18,7 +18,7 @@ public class PareNumber extends JFrame{
 	   for(int j=0;j<5;j++){	   
 	       PareNumberPanel p = new PareNumberPanel();
 	       p.setSize(90,90);
-	       p.setLocation(100*i,100*j);
+	       p.setLocation(100*i+50,100*j+70);
 	       frame.add(p);
 	   }
        }
