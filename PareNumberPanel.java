@@ -1,34 +1,27 @@
+////////panel
+
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
-import java.awt.BorderLayout;
 
-public class PareNumberPanel extends JFrame{
-
-  public static void main(String[] args){
-      PareNumberPanel frame = new PareNumberPanel();
-      //    SubPanel sp = new SubPanel();
-
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setBounds(10, 10, 600, 600);
-      frame.setTitle("数字ペア消しゲーム");
-      frame.setVisible(true);
-  }
-
-  PareNumberPanel(){
-    JPanel p = new JPanel();
-    p.setLayout(null);
-    //   this.add(sp);
-    //   sp.setVisible(false);
-
-    JButton button1 = new JButton("Start!");
-    button1.setBounds(200, 200, 200, 100);
-
-    JButton button2 = new JButton("ランキング");
-    button2.setBounds(200, 300, 200, 100);
-
-    p.add(button1);
-    p.add(button2);
-
-    getContentPane().add(p, BorderLayout.CENTER);
-  }
+class PareNumberPanel extends JPanel implements MouseListener{
+    //int width=600;
+    //int hight=600;
+    PareNumberPanel(){
+	super();
+	setBackground(Color.WHITE);;
+	addMouseListener(this);
+    }
+  public void mouseClicked(MouseEvent e){
+	setBackground(Color.red);;
 }
+
+  public void mouseEntered(MouseEvent e){}
+  public void mouseExited(MouseEvent e){}
+  public void mousePressed(MouseEvent e){}
+  public void mouseReleased(MouseEvent e){}
+    
+    
+}
+
 
