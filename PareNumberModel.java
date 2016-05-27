@@ -33,35 +33,37 @@ public class PareNumberModel{
         b = y1;
         c = x2;
         d = y2;
-        if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
-            int CheckNumber; //チェックナンバーを用意
-            for(int i = b;i >= 0;i--){ //aの上のチェック
-                CheckNumber = PanelNumber[a][i];
+        if(a!=c){
+            if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
+                int CheckNumber; //チェックナンバーを用意
+                for(int i = b;i >= 0;i--){ //aの上のチェック
+                    CheckNumber = PanelNumber[a][i];
                 
-                for(int j=i-1;j >= 0;j--){ //チェックする位置の移動
-                    if(CheckNumber != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
-                        break;
+                    for(int j=i-1;j >= 0;j--){ //チェックする位置の移動
+                        if(CheckNumber != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
+                            break;
+                        }
+                        PanelNumber[a][j+1] = 0;
+                        PanelNumber[a][j] = 0;
                     }
-                    PanelNumber[a][j+1] = 0;
-                    PanelNumber[a][j] = 0;
                 }
-            }
             
-            for(int i = b;i >= 0;i--){ //cの上のチェック
-                CheckNumber = PanelNumber[c][i];
+                for(int i = b;i >= 0;i--){ //cの上のチェック
+                    CheckNumber = PanelNumber[c][i];
                 
-                for(int j=i-1;j >= 0;j--){
-                    if(CheckNumber != PanelNumber[c][j]){
-                        break;
+                    for(int j=i-1;j >= 0;j--){
+                        if(CheckNumber != PanelNumber[c][j]){
+                            break;
+                        }
+                        PanelNumber[c][j+1] = 0;
+                        PanelNumber[c][j] = 0;
                     }
-                    PanelNumber[c][j+1] = 0;
-                    PanelNumber[c][j] = 0;
                 }
-            }
-            PanelNumber[a][b] = 0;
-            PanelNumber[c][d] = 0;
+                PanelNumber[a][b] = 0;
+                PanelNumber[c][d] = 0;
             
-            numberFall(); //消去するところまでが一連の動作
+                numberFall(); //消去するところまでが一連の動作
+            }
         }
         //一番外側
         return PanelNumber;
@@ -137,10 +139,6 @@ public class PareNumberModel{
         PanelNumber[a][0] = n;
         n = rnd.nextInt(MaxNumber+1);
         PanelNumber[c][0] = n;
-  for(int i = 0;i < MaxNumber;i++){
-            for(int j = 0;j < MaxNumber;j++){
-		System.out.println(PanelNumber[i][j]);
-        }
-  }
-    } 
+    
+    }
 }
