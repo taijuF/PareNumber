@@ -9,30 +9,8 @@ public class PareNumberModel{
     int count=0;
     
     public PareNumberModel(){
-        
-    }
-    
-    public void selectDifficulty(){ //viewに
-        //this.viewの難易度選択画面のメソッド
-        //未完成？
-    }
-    
-    public int easy(){ //マスの数を送り返す(仮)
-        MaxNumber = 4;
+        MaxNumber = 5;
         PanelNumber = new int[MaxNumber][MaxNumber];
-        return 4;
-    }
-    
-    public int nomal(){//マスの数を送り返す
-        MaxNumber = 6;
-        PanelNumber = new int[MaxNumber][MaxNumber];
-        return 6;
-    }
-    
-    public int hard(){//マスの数を送り返す
-        MaxNumber = 8;
-        PanelNumber = new int[MaxNumber][MaxNumber];
-        return 8;//メソッド呼び出し？
     }
     
     public int[][] getNumber(){//数字を入れた配列を返す(初期設定)
