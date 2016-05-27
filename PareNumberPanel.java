@@ -20,7 +20,9 @@ class PareNumberPanel extends JPanel implements MouseListener{
     }
 
    public void setNumber(int number,int x,int y){
-	this.number = number;
+
+       System.out.println(number+" "+x+" "+y);
+       this.number = number;
 	this.x = x;
 	this.y = y; 
 	this.repaint();

@@ -14,9 +14,6 @@ public class PareNumberController{
 
     }
 
-
-
-
     
     public void didClick(int x, int y){
 	
@@ -28,9 +25,10 @@ public class PareNumberController{
 	}
 	else{	
          int [][]newxy = model.numberClear(keep_x,keep_y,x,y);
+	 System.out.println(newxy);
 	 for(int i = 0; i < 5; i++){
-	     for(int j = 0;j < 5; j++ ){
-		 pareNumber.panels[i][j].setNumber(newxy[x][y],i,j);
+	     for(int j = 0;j < 5; j++){
+		 pareNumber.panels[i][j].setNumber(newxy[i][j],i,j);
 	     }
 	 }	  
 	 keep_x=-1;
