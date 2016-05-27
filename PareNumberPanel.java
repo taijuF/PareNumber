@@ -8,20 +8,32 @@ class PareNumberPanel extends JPanel implements MouseListener{
 
     PareNumberController control;
     int x,y;
-    
-    PareNumberPanel(PareNumberController c,int x,int y){
+    int number;
+
+    PareNumberPanel(PareNumberController c,int x,int y,int number){
 	super();
 	control=c;
-	setBackground(Color.WHITE);
 	addMouseListener(this);
 	this.x=x;
 	this.y=y;
+	this.number = number;
     }
-    public void mouseClicked(MouseEvent e){
 
+   public void setNumber(int number,int x,int y){
+	this.number = number;
+	this.x = x;
+	this.y = y; 
+	this.repaint();
+    }
+
+
+    public void mouseClicked(MouseEvent e){
 	setBackground(Color.red);
 	control.didClick(x,y);
-	
+    }
+   public void paintComponent(Graphics g){
+       setBackground(Color.WHITE);
+       g.drawString(Integer.toString(number),45,45);
     }
 
   public void mouseEntered(MouseEvent e){}

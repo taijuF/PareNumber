@@ -1,5 +1,5 @@
 #Makefile
-pareNumber:
+compile:
 	javac PareNumber.java
 clean:
 	rm *.class

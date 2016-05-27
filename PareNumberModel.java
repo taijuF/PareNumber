@@ -14,8 +14,8 @@ public class PareNumberModel{
     }
     
     public int[][] getNumber(){//数字を入れた配列を返す(初期設定)
-        for(int i = 0;i <= MaxNumber;i++){
-            for(int j = 0;j <= MaxNumber;j++){
+        for(int i = 0;i < MaxNumber;i++){
+            for(int j = 0;j < MaxNumber;j++){
                 Random rnd = new Random();
                 int n = rnd.nextInt(MaxNumber)+1;
                 PanelNumber[i][j] = n;
@@ -133,7 +133,10 @@ public class PareNumberModel{
         PanelNumber[a][0] = n;
         n = rnd.nextInt(MaxNumber+1);
         PanelNumber[c][0] = n;
-    }
-    
-    
+  for(int i = 0;i < MaxNumber;i++){
+            for(int j = 0;j < MaxNumber;j++){
+		System.out.println(PanelNumber[i][j]);
+        }
+  }
+    } 
 }

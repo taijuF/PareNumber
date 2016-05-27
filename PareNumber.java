@@ -32,13 +32,14 @@ public class PareNumber extends JFrame{
 	this.setSize(600,600);
 	this.setLayout(null);
 	frame.panels = new PareNumberPanel[5][5];
+	int[][] number1 = m.getNumber();
        for(int i=0;i<5;i++){
 	   for(int j=0;j<5;j++){	   
-	       PareNumberPanel p = new PareNumberPanel(c,i,j);
+	       PareNumberPanel p = new PareNumberPanel(c,i,j,number1[i][j]);
 	       p.setSize(90,90);
 	       p.setLocation(100*i+50,100*j+70);
 	       this.add(p);
-	       //panels[i][j];
+	       frame.panels[i][j] = p ;
 	   }
        }
     }

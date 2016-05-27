@@ -12,10 +12,18 @@ class PareNumberStartFrame extends JFrame{
 	this.pareNumber = pareNumber;
 	this.setSize(600,600);
 	this.setLayout(null);
+
 	PareNumberStartPanel SPanel= new PareNumberStartPanel(pareNumber,this);
 	SPanel.setSize(200,100);
 	SPanel.setLocation(200,200); 
+
+	PareNumberRankingPanel RPanel= new PareNumberRankingPanel(pareNumber,this);
+	RPanel.setSize(200,100);
+	RPanel.setLocation(200,350); 
+
 	this.add(SPanel);
+	this.add(RPanel);
+
 	this.setVisible(true);
     }
 }

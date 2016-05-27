@@ -28,11 +28,16 @@ public class PareNumberController{
 	}
 	else{	
          int [][]newxy = model.numberClear(keep_x,keep_y,x,y);
-	   keep_x=-1;
-	   keep_y=-1;
+	 for(int i = 0; i < 5; i++){
+	     for(int j = 0;j < 5; j++ ){
+		 pareNumber.panels[i][j].setNumber(newxy[x][y],i,j);
+	     }
+	 }	  
+	 keep_x=-1;
+	 keep_y=-1;
 	}
     }
-
+    
 
 
     
