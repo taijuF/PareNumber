@@ -1,33 +1,25 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.JLabel;
 
-class PareNumberStartFrame extends JFrame implements MouseListener{
+class PareNumberStartFrame extends JFrame{
 
-    PareNumberStartFrame(){
+    PareNumber pareNumber ;
+
+    PareNumberStartFrame(PareNumber pareNumber){
 	super();
-	JPanel p = new JPanel();
+	this.pareNumber = pareNumber;
 	this.setSize(600,600);
 	this.setLayout(null);
-	p.setSize(200,200);
-	p.setLocation(300,300);
-	p.setBackground(Color.WHITE);
-	this.add(p);
-	addMouseListener(this);
+	PareNumberStartPanel SPanel= new PareNumberStartPanel(pareNumber,this);
+	SPanel.setSize(200,100);
+	SPanel.setLocation(200,200); 
+	this.add(SPanel);
 	this.setVisible(true);
     }
-
-
-    public void mouseClicked(MouseEvent e){
-	this.setVisible(false);
-
-    }
-  public void mouseEntered(MouseEvent e){}
-  public void mouseExited(MouseEvent e){}
-  public void mousePressed(MouseEvent e){}
-  public void mouseReleased(MouseEvent e){}
-    
-    
 }
+
+
 
 

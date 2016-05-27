@@ -12,7 +12,7 @@ public class PareNumberModel{
     }
     
     public void selectDifficulty(){
-    //this.viewの難易度選択画面のメソッド
+        //this.viewの難易度選択画面のメソッド
     }
     
     public int easy(){ //マスの数を送り返す(仮)
@@ -34,8 +34,8 @@ public class PareNumberModel{
     }
     
     public void getNumber(){//数字を入れた配列を返す(初期設定)
-        for(int i = 0;i < MaxNumber;i++){
-            for(int j = MaxNumber;j > 0;j--){
+        for(int i = 0;i <= MaxNumber;i++){
+            for(int j = 0;j <= MaxNumber;j++){
                 Random rnd = new Random();
                 int n = rnd.nextInt(MaxNumber)+1;
                 PanelNumber[i][j] = n;
@@ -49,26 +49,28 @@ public class PareNumberModel{
         c = c1;
         d = d1;
         if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
-            int CheckNumber; //チェックナンバーを用意
+            int CheckNember; //チェックナンバーを用意
             for(int i = b;i >= 0;i--){ //aの上のチェック
-                CheckNumber = PanelNumber[a][i];
+                CheckNember = PanelNumber[a][i];
                 
-                for(int j=i-1;j > 0;j--){ //チェックする位置の移動
-                    if(CheckNumber != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
+                for(int j=i-1;j >= 0;j--){ //チェックする位置の移動
+                    if(CheckNember != PanelNumber[a][j]){ //違う数字が出たらループから抜ける
                         break;
                     }
-                    PanelNumber[a][j-1] = 0;
+                    PanelNumber[a][j+1] = 0;
+                    PanelNumber[a][j] = 0;
                 }
             }
             
             for(int i = b;i >= 0;i--){ //cの上のチェック
-                CheckNumber = PanelNumber[c][i];
+                CheckNember = PanelNumber[c][i];
                 
-                for(int j=i-1;j > 0;j--){
-                    if(CheckNumber != PanelNumber[c][j]){
+                for(int j=i-1;j >= 0;j--){
+                    if(CheckNember != PanelNumber[c][j]){
                         break;
                     }
-                    PanelNumber[c][j-1] = 0;
+                    PanelNumber[c][j+1] = 0;
+                    PanelNumber[c][j] = 0;
                 }
             }
             PanelNumber[a][b] = 0;
@@ -86,7 +88,7 @@ public class PareNumberModel{
             if(PanelNumber[a][i] == 0){
                 for(j = i-1;j > 0;j--){ //チェックする位置の移動
                     
-                    if(PanelNumber[a][j] != 0){ //違う数字が出たらループから抜ける
+                    if(PanelNumber[a][j] != 0){ //0以外が出たらループから抜ける
                         checkupNumber = 1;
                         break;
                     }
@@ -143,9 +145,6 @@ public class PareNumberModel{
     }
     
 }
-
-
-
 
 
 
