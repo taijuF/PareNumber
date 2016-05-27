@@ -5,13 +5,23 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class PareNumberPanel extends JPanel implements MouseListener{
-    PareNumberPanel(){
+
+    PareNumberController control;
+    int x,y;
+    
+    PareNumberPanel(PareNumberController c,int x,int y){
 	super();
+	control=c;
 	setBackground(Color.WHITE);
 	addMouseListener(this);
+	this.x=x;
+	this.y=y;
     }
     public void mouseClicked(MouseEvent e){
-	setBackground(Color.red);;
+
+	setBackground(Color.red);
+	control.didClick(x,y);
+	
     }
 
   public void mouseEntered(MouseEvent e){}

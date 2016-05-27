@@ -4,12 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PareNumber extends JFrame{
-    /*  
-  private PareNumberController controller;
+
+    public PareNumberPanel panels[][];
+    public  PareNumberController controller;
     private PareNumberModel Model;
     private PareNumberPanel Panel;
-    */
+   
 
+    
     public static void main(String args[]){
  
 	PareNumber app = new PareNumber();
@@ -23,17 +25,27 @@ public class PareNumber extends JFrame{
     
     public void gameWindow(){
 	PareNumber frame = new PareNumber();
+	PareNumberModel m = new PareNumberModel();
+	PareNumberController c = new PareNumberController(frame,m);
+	frame.controller = c;
+
 	this.setSize(600,600);
 	this.setLayout(null);
+	frame.panels = new PareNumberPanel[5][5];
        for(int i=0;i<5;i++){
 	   for(int j=0;j<5;j++){	   
-	       PareNumberPanel p = new PareNumberPanel();
+	       PareNumberPanel p = new PareNumberPanel(c,i,j);
 	       p.setSize(90,90);
 	       p.setLocation(100*i+50,100*j+70);
 	       this.add(p);
+	       //panels[i][j];
 	   }
        }
     }
+
+
+    
+    
        
    public void makeMenuBar(){
        JMenuBar bar = new JMenuBar();
