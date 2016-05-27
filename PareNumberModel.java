@@ -6,11 +6,15 @@ public class PareNumberModel{
     int MaxNumber = 0; //大きさ管理
     int PanelNumber[][];//パネルの数字管理
     int a,b,c,d;
-    int count=0;
+    int count=0;//スコア管理
     
     public PareNumberModel(){
-        MaxNumber = 5;
-        PanelNumber = new int[MaxNumber][MaxNumber];
+        MaxNumber = 5;//難易度に関わる部分
+        PanelNumber = new int[MaxNumber][MaxNumber];//配列宣言
+    }
+    
+    public int getScore(){
+        return count;
     }
     
     public int[][] getNumber(){//数字を入れた配列を返す(初期設定)
