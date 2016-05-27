@@ -87,7 +87,7 @@ public class PareNumberModel{
     
     
     
-    public int[][] numberFall(){ //０のない配列
+    private void numberFall(){ //０のない配列
         for(int i = b;i >= 0;i--){ //aの上のチェック
             int j = 0;
             int checkupNumber = 0;
@@ -155,8 +155,6 @@ public class PareNumberModel{
         PanelNumber[a][0] = n;
         n = rnd.nextInt(MaxNumber+1);
         PanelNumber[c][0] = n;
-        
-        return PanelNumber;
     }
     
     
