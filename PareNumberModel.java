@@ -33,7 +33,7 @@ public class PareNumberModel{
         b = y1;
         c = x2;
         d = y2;
-        if(a!=c){
+        if(a!=c||b==d){
             if(PanelNumber[a][b] == PanelNumber[c][d]){ //選ばれた二つの数字が同じならば
                 int CheckNumber; //チェックナンバーを用意
                 for(int i = b;i >= 0;i--){ //aの上のチェック
